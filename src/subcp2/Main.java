@@ -5,6 +5,7 @@
 package subcp2;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.io.File;
 
 import javax.swing.JFileChooser;
@@ -15,6 +16,7 @@ import com.formdev.flatlaf.FlatIntelliJLaf;
 
 import subcp2.service.Copy;
 import subcp2.service.ExportFile;
+import subcp2.service.Formatting;
 import subcp2.service.ImportFile;
 import subcp2.service.SaveFile;
 import subcp2.service.SubtitleFile;
@@ -25,11 +27,28 @@ import subcp2.service.SubtitleFile;
  */
 public class Main extends javax.swing.JFrame {
 
+
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        centerFrameOnScreen();
+    }
+
+    private void centerFrameOnScreen() {
+        // Calculate the center of the screen
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+
+        int frameWidth = getWidth();
+        int frameHeight = getHeight();
+
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the frame location to the center
+        setLocation(x, y);
     }
 
     /**
@@ -63,7 +82,7 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         leftButtonItalic = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        leftButtonBreak = new javax.swing.JPanel();
+        leftButtonUnderline = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         rightPanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -86,7 +105,7 @@ public class Main extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         rightButtonItalic = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        rightButtonBreak = new javax.swing.JPanel();
+        rightButtonUnderline = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
@@ -127,11 +146,11 @@ public class Main extends javax.swing.JFrame {
         copyBothToRight = new javax.swing.JMenuItem();
         jSeparator7 = new javax.swing.JPopupMenu.Separator();
         jMenu13 = new javax.swing.JMenu();
-        jMenuItem23 = new javax.swing.JMenuItem();
+        undo = new javax.swing.JMenuItem();
         jMenuItem24 = new javax.swing.JMenuItem();
         jMenuItem25 = new javax.swing.JMenuItem();
         jMenu14 = new javax.swing.JMenu();
-        jMenuItem26 = new javax.swing.JMenuItem();
+        redo = new javax.swing.JMenuItem();
         jMenuItem27 = new javax.swing.JMenuItem();
         jMenuItem28 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
@@ -301,6 +320,9 @@ public class Main extends javax.swing.JFrame {
 
         leftButtonBold.setBackground(new java.awt.Color(255, 255, 255));
         leftButtonBold.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leftButtonBoldMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 leftButtonBoldMouseEntered(evt);
             }
@@ -331,6 +353,9 @@ public class Main extends javax.swing.JFrame {
 
         leftButtonItalic.setBackground(new java.awt.Color(255, 255, 255));
         leftButtonItalic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leftButtonItalicMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 leftButtonItalicMouseEntered(evt);
             }
@@ -359,35 +384,38 @@ public class Main extends javax.swing.JFrame {
 
         leftOption.add(leftButtonItalic);
 
-        leftButtonBreak.setBackground(new java.awt.Color(255, 255, 255));
-        leftButtonBreak.addMouseListener(new java.awt.event.MouseAdapter() {
+        leftButtonUnderline.setBackground(new java.awt.Color(255, 255, 255));
+        leftButtonUnderline.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                leftButtonUnderlineMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                leftButtonBreakMouseEntered(evt);
+                leftButtonUnderlineMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                leftButtonBreakMouseExited(evt);
+                leftButtonUnderlineMouseExited(evt);
             }
         });
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/format-align-bottom-custom.png"))); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/format-underline-custom.png"))); // NOI18N
 
-        javax.swing.GroupLayout leftButtonBreakLayout = new javax.swing.GroupLayout(leftButtonBreak);
-        leftButtonBreak.setLayout(leftButtonBreakLayout);
-        leftButtonBreakLayout.setHorizontalGroup(
-            leftButtonBreakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftButtonBreakLayout.createSequentialGroup()
+        javax.swing.GroupLayout leftButtonUnderlineLayout = new javax.swing.GroupLayout(leftButtonUnderline);
+        leftButtonUnderline.setLayout(leftButtonUnderlineLayout);
+        leftButtonUnderlineLayout.setHorizontalGroup(
+            leftButtonUnderlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, leftButtonUnderlineLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel6))
         );
-        leftButtonBreakLayout.setVerticalGroup(
-            leftButtonBreakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(leftButtonBreakLayout.createSequentialGroup()
+        leftButtonUnderlineLayout.setVerticalGroup(
+            leftButtonUnderlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(leftButtonUnderlineLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(jLabel6)
                 .addGap(8, 8, 8))
         );
 
-        leftOption.add(leftButtonBreak);
+        leftOption.add(leftButtonUnderline);
 
         javax.swing.GroupLayout leftToolLayout = new javax.swing.GroupLayout(leftTool);
         leftTool.setLayout(leftToolLayout);
@@ -585,6 +613,9 @@ public class Main extends javax.swing.JFrame {
 
         rightButtonBold.setBackground(new java.awt.Color(255, 255, 255));
         rightButtonBold.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rightButtonBoldMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 rightButtonBoldMouseEntered(evt);
             }
@@ -615,6 +646,9 @@ public class Main extends javax.swing.JFrame {
 
         rightButtonItalic.setBackground(new java.awt.Color(255, 255, 255));
         rightButtonItalic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rightButtonItalicMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 rightButtonItalicMouseEntered(evt);
             }
@@ -643,35 +677,38 @@ public class Main extends javax.swing.JFrame {
 
         rightOption.add(rightButtonItalic);
 
-        rightButtonBreak.setBackground(new java.awt.Color(255, 255, 255));
-        rightButtonBreak.addMouseListener(new java.awt.event.MouseAdapter() {
+        rightButtonUnderline.setBackground(new java.awt.Color(255, 255, 255));
+        rightButtonUnderline.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rightButtonUnderlineMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                rightButtonBreakMouseEntered(evt);
+                rightButtonUnderlineMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                rightButtonBreakMouseExited(evt);
+                rightButtonUnderlineMouseExited(evt);
             }
         });
 
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/format-align-bottom-custom.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/format-underline-custom.png"))); // NOI18N
 
-        javax.swing.GroupLayout rightButtonBreakLayout = new javax.swing.GroupLayout(rightButtonBreak);
-        rightButtonBreak.setLayout(rightButtonBreakLayout);
-        rightButtonBreakLayout.setHorizontalGroup(
-            rightButtonBreakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightButtonBreakLayout.createSequentialGroup()
+        javax.swing.GroupLayout rightButtonUnderlineLayout = new javax.swing.GroupLayout(rightButtonUnderline);
+        rightButtonUnderline.setLayout(rightButtonUnderlineLayout);
+        rightButtonUnderlineLayout.setHorizontalGroup(
+            rightButtonUnderlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rightButtonUnderlineLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel12))
         );
-        rightButtonBreakLayout.setVerticalGroup(
-            rightButtonBreakLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rightButtonBreakLayout.createSequentialGroup()
+        rightButtonUnderlineLayout.setVerticalGroup(
+            rightButtonUnderlineLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rightButtonUnderlineLayout.createSequentialGroup()
                 .addGap(8, 8, 8)
                 .addComponent(jLabel12)
                 .addGap(8, 8, 8))
         );
 
-        rightOption.add(rightButtonBreak);
+        rightOption.add(rightButtonUnderline);
 
         javax.swing.GroupLayout rightToolLayout = new javax.swing.GroupLayout(rightTool);
         rightTool.setLayout(rightToolLayout);
@@ -928,8 +965,13 @@ public class Main extends javax.swing.JFrame {
 
         jMenu13.setText("Undo");
 
-        jMenuItem23.setText("Undo text only");
-        jMenu13.add(jMenuItem23);
+        undo.setText("Undo text only");
+        undo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                undoActionPerformed(evt);
+            }
+        });
+        jMenu13.add(undo);
 
         jMenuItem24.setText("Undo timestamp only");
         jMenu13.add(jMenuItem24);
@@ -941,8 +983,13 @@ public class Main extends javax.swing.JFrame {
 
         jMenu14.setText("Redo");
 
-        jMenuItem26.setText("Redo text only");
-        jMenu14.add(jMenuItem26);
+        redo.setText("Redo text only");
+        redo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                redoActionPerformed(evt);
+            }
+        });
+        jMenu14.add(redo);
 
         jMenuItem27.setText("Redo timestamp only");
         jMenu14.add(jMenuItem27);
@@ -1010,13 +1057,13 @@ public class Main extends javax.swing.JFrame {
         leftButtonItalic.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_leftButtonItalicMouseExited
 
-    private void leftButtonBreakMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonBreakMouseEntered
-        leftButtonBreak.setBackground(new Color(242, 242, 242));
-    }//GEN-LAST:event_leftButtonBreakMouseEntered
+    private void leftButtonUnderlineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonUnderlineMouseEntered
+        leftButtonUnderline.setBackground(new Color(242, 242, 242));
+    }//GEN-LAST:event_leftButtonUnderlineMouseEntered
 
-    private void leftButtonBreakMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonBreakMouseExited
-        leftButtonBreak.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_leftButtonBreakMouseExited
+    private void leftButtonUnderlineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonUnderlineMouseExited
+        leftButtonUnderline.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_leftButtonUnderlineMouseExited
 
     private void rightButtonBoldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonBoldMouseEntered
         rightButtonBold.setBackground(new Color(242, 242, 242));
@@ -1034,13 +1081,13 @@ public class Main extends javax.swing.JFrame {
         rightButtonItalic.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_rightButtonItalicMouseExited
 
-    private void rightButtonBreakMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonBreakMouseEntered
-        rightButtonBreak.setBackground(new Color(242, 242, 242));
-    }//GEN-LAST:event_rightButtonBreakMouseEntered
+    private void rightButtonUnderlineMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonUnderlineMouseEntered
+        rightButtonUnderline.setBackground(new Color(242, 242, 242));
+    }//GEN-LAST:event_rightButtonUnderlineMouseEntered
 
-    private void rightButtonBreakMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonBreakMouseExited
-        rightButtonBreak.setBackground(new Color(255, 255, 255));
-    }//GEN-LAST:event_rightButtonBreakMouseExited
+    private void rightButtonUnderlineMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonUnderlineMouseExited
+        rightButtonUnderline.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_rightButtonUnderlineMouseExited
 
     private void openLeftSubtitleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openLeftSubtitleActionPerformed
         JFileChooser fileChooser = new JFileChooser();
@@ -1067,7 +1114,7 @@ public class Main extends javax.swing.JFrame {
     private void leftTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftTableMouseClicked
         int selectedRow = leftTable.getSelectedRow();
 
-        if (selectedRow != 1) {
+        if (selectedRow != -1) {
             DefaultTableModel model = (DefaultTableModel) leftTable.getModel();
 
             // Check if all data in the selected row is null
@@ -1088,19 +1135,20 @@ public class Main extends javax.swing.JFrame {
             String startTimeString = model.getValueAt(selectedRow, 1).toString();
             String endTimeString = model.getValueAt(selectedRow, 2).toString();
             String durationString = model.getValueAt(selectedRow, 3).toString();
+            String textString = model.getValueAt(selectedRow, 4).toString();
 
             // Set data to the text field
             leftStart.setText(startTimeString);
             leftEnd.setText(endTimeString);
             leftDuration.setText(durationString);
-            leftText.setText(model.getValueAt(selectedRow, 4).toString());
+            leftText.setText(textString);
         }
     }//GEN-LAST:event_leftTableMouseClicked
 
     private void rightTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightTableMouseClicked
         int selectedRow = rightTable.getSelectedRow();
 
-        if (selectedRow != 1) {
+        if (selectedRow != -1) {
             DefaultTableModel model = (DefaultTableModel) rightTable.getModel();
 
             // Check if all data in the selected row is null
@@ -1121,12 +1169,13 @@ public class Main extends javax.swing.JFrame {
             String startTimeString = model.getValueAt(selectedRow, 1).toString();
             String endTimeString = model.getValueAt(selectedRow, 2).toString();
             String durationString = model.getValueAt(selectedRow, 3).toString();
+            String textString = model.getValueAt(selectedRow, 4).toString();
 
             // Set data to the text field
             rightStart.setText(startTimeString);
             rightEnd.setText(endTimeString);
             rightDuration.setText(durationString);
-            rightText.setText(model.getValueAt(selectedRow, 4).toString());
+            rightText.setText(textString);
         }
     }//GEN-LAST:event_rightTableMouseClicked
 
@@ -1372,6 +1421,104 @@ public class Main extends javax.swing.JFrame {
         copy.both(leftTable, rightTable);
     }//GEN-LAST:event_copyBothToRightActionPerformed
 
+    private void leftButtonBoldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonBoldMouseClicked
+        int selectedRow = leftTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) leftTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.bold(textString);
+            leftText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_leftButtonBoldMouseClicked
+
+    private void leftButtonItalicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonItalicMouseClicked
+        int selectedRow = leftTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) leftTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.italic(textString);
+            leftText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_leftButtonItalicMouseClicked
+
+    private void leftButtonUnderlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_leftButtonUnderlineMouseClicked
+        int selectedRow = leftTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) leftTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.underline(textString);
+            leftText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_leftButtonUnderlineMouseClicked
+
+    private void rightButtonBoldMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonBoldMouseClicked
+        int selectedRow = rightTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) rightTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.bold(textString);
+            rightText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_rightButtonBoldMouseClicked
+
+    private void rightButtonItalicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonItalicMouseClicked
+        int selectedRow = rightTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) rightTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.italic(textString);
+            rightText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_rightButtonItalicMouseClicked
+
+    private void rightButtonUnderlineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rightButtonUnderlineMouseClicked
+        int selectedRow = rightTable.getSelectedRow();
+
+        if (selectedRow != -1) {
+            DefaultTableModel model = (DefaultTableModel) rightTable.getModel();
+            String textString = model.getValueAt(selectedRow, 4).toString();
+            Formatting format = new Formatting();
+            String formatted = format.underline(textString);
+            rightText.setText(formatted);
+            model.setValueAt(formatted, selectedRow, 4);
+        } else {
+            JOptionPane.showMessageDialog(this, "Please select a row.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_rightButtonUnderlineMouseClicked
+
+    private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
+        
+    }//GEN-LAST:event_undoActionPerformed
+
+    private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
+        
+    }//GEN-LAST:event_redoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1429,10 +1576,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
-    private javax.swing.JMenuItem jMenuItem23;
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
-    private javax.swing.JMenuItem jMenuItem26;
     private javax.swing.JMenuItem jMenuItem27;
     private javax.swing.JMenuItem jMenuItem28;
     private javax.swing.JPanel jPanel10;
@@ -1455,8 +1600,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPanel leftButtonBold;
-    private javax.swing.JPanel leftButtonBreak;
     private javax.swing.JPanel leftButtonItalic;
+    private javax.swing.JPanel leftButtonUnderline;
     private javax.swing.JMenuItem leftClose;
     private javax.swing.JFormattedTextField leftDuration;
     private javax.swing.JFormattedTextField leftEnd;
@@ -1474,9 +1619,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuItem openLeftSubtitle;
     private javax.swing.JMenuItem openRightSubtitle;
+    private javax.swing.JMenuItem redo;
     private javax.swing.JPanel rightButtonBold;
-    private javax.swing.JPanel rightButtonBreak;
     private javax.swing.JPanel rightButtonItalic;
+    private javax.swing.JPanel rightButtonUnderline;
     private javax.swing.JMenuItem rightClose;
     private javax.swing.JFormattedTextField rightDuration;
     private javax.swing.JFormattedTextField rightEnd;
@@ -1491,5 +1637,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable rightTable;
     private javax.swing.JTextArea rightText;
     private javax.swing.JPanel rightTool;
+    private javax.swing.JMenuItem undo;
     // End of variables declaration//GEN-END:variables
 }

@@ -6,7 +6,6 @@ package subcp2.service;
 
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.JTextArea;
 import javax.swing.table.DefaultTableModel;
 import subcp2.utilities.Calculate;
 import subcp2.utilities.Decimal;
