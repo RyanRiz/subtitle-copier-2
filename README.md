@@ -2,7 +2,7 @@
 
 Subtitle Copier is a Java Swing-based application that allows users to manage and manipulate subtitle files. The application provides a user-friendly interface for opening, saving, and editing subtitle files.
 
-![Subtitle Copier Demo](https://ibb.co/W2yFgZ9)
+![Subtitle Copier Demo](https://i.ibb.co/mcqt6ks/example.png)
 
 ## Features
 
