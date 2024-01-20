@@ -16,7 +16,7 @@ import com.formdev.flatlaf.FlatIntelliJLaf;
 
 import subcp2.service.Copy;
 import subcp2.service.ExportFile;
-import subcp2.service.Formatting;
+import subcp2.utilities.Formatting;
 import subcp2.service.ImportFile;
 import subcp2.service.SaveFile;
 import subcp2.service.SubtitleFile;
