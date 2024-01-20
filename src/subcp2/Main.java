@@ -60,6 +60,15 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        popMenu = new javax.swing.JPopupMenu();
+        popTextToLeft = new javax.swing.JMenuItem();
+        popTextToRight = new javax.swing.JMenuItem();
+        jSeparator8 = new javax.swing.JPopupMenu.Separator();
+        popTimeToLeft = new javax.swing.JMenuItem();
+        popTimeToRight = new javax.swing.JMenuItem();
+        jSeparator9 = new javax.swing.JPopupMenu.Separator();
+        popBothToLeft = new javax.swing.JMenuItem();
+        popBothToRight = new javax.swing.JMenuItem();
         mainPanel = new javax.swing.JPanel();
         leftPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -160,10 +169,69 @@ public class Main extends javax.swing.JFrame {
         jMenuItem21 = new javax.swing.JMenuItem();
         jMenuItem22 = new javax.swing.JMenuItem();
 
+        popTextToLeft.setText("Copy text to left");
+        popTextToLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popTextToLeftActionPerformed(evt);
+            }
+        });
+        popMenu.add(popTextToLeft);
+
+        popTextToRight.setText("Copy text to right");
+        popTextToRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popTextToRightActionPerformed(evt);
+            }
+        });
+        popMenu.add(popTextToRight);
+        popMenu.add(jSeparator8);
+
+        popTimeToLeft.setText("Copy timestamp to left");
+        popTimeToLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popTimeToLeftActionPerformed(evt);
+            }
+        });
+        popMenu.add(popTimeToLeft);
+
+        popTimeToRight.setText("Copy timestamp to right");
+        popTimeToRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popTimeToRightActionPerformed(evt);
+            }
+        });
+        popMenu.add(popTimeToRight);
+        popMenu.add(jSeparator9);
+
+        popBothToLeft.setText("Copy both to left");
+        popBothToLeft.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popBothToLeftActionPerformed(evt);
+            }
+        });
+        popMenu.add(popBothToLeft);
+
+        popBothToRight.setText("Copy both to right");
+        popBothToRight.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                popBothToRightActionPerformed(evt);
+            }
+        });
+        popMenu.add(popBothToRight);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Subtitle Copier");
         setBackground(new java.awt.Color(255, 255, 255));
+        addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                formMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                formMouseReleased(evt);
+            }
+        });
 
+        mainPanel.setComponentPopupMenu(popMenu);
         mainPanel.setLayout(new java.awt.GridLayout(1, 2, 6, 0));
 
         leftTable.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -184,6 +252,7 @@ public class Main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        leftTable.setComponentPopupMenu(popMenu);
         leftTable.setRowHeight(25);
         leftTable.setShowGrid(true);
         leftTable.getTableHeader().setReorderingAllowed(false);
@@ -477,6 +546,7 @@ public class Main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        rightTable.setComponentPopupMenu(popMenu);
         rightTable.setRowHeight(25);
         rightTable.setShowGrid(true);
         rightTable.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1511,6 +1581,44 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_rightButtonUnderlineMouseClicked
 
+    private void showPopup(java.awt.event.MouseEvent evt) {
+        if (evt.isPopupTrigger()) {
+            popMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+        }
+    }
+
+    private void formMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseReleased
+        showPopup(evt);
+    }//GEN-LAST:event_formMouseReleased
+
+    private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
+        showPopup(evt);
+    }//GEN-LAST:event_formMousePressed
+
+    private void popTextToLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTextToLeftActionPerformed
+        copyTextToLeftActionPerformed(evt);
+    }//GEN-LAST:event_popTextToLeftActionPerformed
+
+    private void popTextToRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTextToRightActionPerformed
+        copyTextToRightActionPerformed(evt);
+    }//GEN-LAST:event_popTextToRightActionPerformed
+
+    private void popTimeToLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTimeToLeftActionPerformed
+        copyTimeToLeftActionPerformed(evt);
+    }//GEN-LAST:event_popTimeToLeftActionPerformed
+
+    private void popTimeToRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popTimeToRightActionPerformed
+        copyTimeToRightActionPerformed(evt);
+    }//GEN-LAST:event_popTimeToRightActionPerformed
+
+    private void popBothToLeftActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popBothToLeftActionPerformed
+        copyBothToLeftActionPerformed(evt);
+    }//GEN-LAST:event_popBothToLeftActionPerformed
+
+    private void popBothToRightActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_popBothToRightActionPerformed
+        copyBothToRightActionPerformed(evt);
+    }//GEN-LAST:event_popBothToRightActionPerformed
+
     private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
         
     }//GEN-LAST:event_undoActionPerformed
@@ -1599,6 +1707,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
+    private javax.swing.JPopupMenu.Separator jSeparator8;
+    private javax.swing.JPopupMenu.Separator jSeparator9;
     private javax.swing.JPanel leftButtonBold;
     private javax.swing.JPanel leftButtonItalic;
     private javax.swing.JPanel leftButtonUnderline;
@@ -1619,6 +1729,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel mainPanel;
     private javax.swing.JMenuItem openLeftSubtitle;
     private javax.swing.JMenuItem openRightSubtitle;
+    private javax.swing.JMenuItem popBothToLeft;
+    private javax.swing.JMenuItem popBothToRight;
+    private javax.swing.JPopupMenu popMenu;
+    private javax.swing.JMenuItem popTextToLeft;
+    private javax.swing.JMenuItem popTextToRight;
+    private javax.swing.JMenuItem popTimeToLeft;
+    private javax.swing.JMenuItem popTimeToRight;
     private javax.swing.JMenuItem redo;
     private javax.swing.JPanel rightButtonBold;
     private javax.swing.JPanel rightButtonItalic;

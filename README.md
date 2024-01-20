@@ -38,6 +38,10 @@ Subtitle Copier is a Java Swing-based application that allows users to manage an
 
 - **Bold, Italic, and Underline**: Easily format subtitle text using the Formatting Toolbar.
 
+### 7. Right Click Shortcut
+
+- **Copy Text, Time, Both to Left/Right**: Peforming is now easier with right click shortcut.
+
 ## Upcoming Features
 
 ### 1. Search Feature (Coming Soon 🔍)
