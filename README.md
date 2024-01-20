@@ -32,12 +32,15 @@ Subtitle Copier is a Java Swing-based application that allows users to manage an
 - **Copy Time to Left/Right**: Copy timestamp information from one table to another.
 - **Copy Both to Left/Right**: Copy both text and timestamp information from one table to another.
 
+### 6. Formating Toolbar
+
+- **Bold, Italic, and Underline**: Easily format subtitle text using the Formatting Toolbar.
+
 ## Upcoming Features
 
 ### 1. Search Feature (Coming Soon 🔍)
 ### 2. English Text Detection (Coming Soon 🌐)
-### 3. Formating Toolbar (Coming Soon 🛠️)
-### 4. Undo Manager (Coming Soon ↩️)
+### 3. Undo Manager (Coming Soon ↩️)
 
 ## Usage
 
