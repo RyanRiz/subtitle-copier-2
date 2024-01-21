@@ -71,11 +71,17 @@
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenu3">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/file-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Load subtitle"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="openLeftSubtitle">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Load left subtitle"/>
                   </Properties>
                   <Events>
@@ -84,6 +90,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="openRightSubtitle">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Load right subtitle"/>
                   </Properties>
                   <Events>
@@ -96,11 +105,17 @@
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu4">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/file-import-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Import"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="leftImportText">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Import text left"/>
                   </Properties>
                   <Events>
@@ -109,6 +124,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightImportText">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Import text right"/>
                   </Properties>
                   <Events>
@@ -119,6 +137,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="leftImportTime">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Import timestamp left"/>
                   </Properties>
                   <Events>
@@ -127,6 +148,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightImportTime">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Import timestamp right"/>
                   </Properties>
                   <Events>
@@ -137,11 +161,17 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu5">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/file-export-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Export"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="leftExportText">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Export text left"/>
                   </Properties>
                   <Events>
@@ -150,6 +180,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightExportText">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Export text right"/>
                   </Properties>
                   <Events>
@@ -160,6 +193,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="leftExportTime">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Export timestamp left"/>
                   </Properties>
                   <Events>
@@ -168,6 +204,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightExportTime">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Export timestamp right"/>
                   </Properties>
                   <Events>
@@ -180,11 +219,17 @@
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu6">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/close-box-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Close subtitle"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="leftClose">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Close left subtitle"/>
                   </Properties>
                   <Events>
@@ -193,6 +238,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightClose">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Close right subtitle"/>
                   </Properties>
                   <Events>
@@ -203,11 +251,17 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu7">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/content-save-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Save subtitle"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="leftSave">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Save left subtitle"/>
                   </Properties>
                   <Events>
@@ -216,6 +270,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="rightSave">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Save right subtitle"/>
                   </Properties>
                   <Events>
@@ -228,6 +285,12 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="appExit">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Alt+F4"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/exit-to-app-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
@@ -243,11 +306,17 @@
           <SubComponents>
             <Menu class="javax.swing.JMenu" name="jMenu8">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/text-box-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Text"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="copyTextToLeft">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy text to left"/>
                   </Properties>
                   <Events>
@@ -256,6 +325,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="copyTextToRight">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy text to right"/>
                   </Properties>
                   <Events>
@@ -266,11 +338,17 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu9">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/clock-time-nine-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Timestamp"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="copyTimeToLeft">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy timestamp to left"/>
                   </Properties>
                   <Events>
@@ -279,6 +357,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="copyTimeToRight">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy timestamp to right"/>
                   </Properties>
                   <Events>
@@ -289,11 +370,17 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu10">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/all-inclusive-box-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Both"/>
               </Properties>
               <SubComponents>
                 <MenuItem class="javax.swing.JMenuItem" name="copyBothToLeft">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-left-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy both to left"/>
                   </Properties>
                   <Events>
@@ -302,6 +389,9 @@
                 </MenuItem>
                 <MenuItem class="javax.swing.JMenuItem" name="copyBothToRight">
                   <Properties>
+                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                      <Image iconType="3" name="/subcp2/icon/arrow-right-bold-box-custom.png"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" value="Copy both to right"/>
                   </Properties>
                   <Events>
@@ -314,6 +404,9 @@
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu13">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/undo-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Undo"/>
               </Properties>
               <SubComponents>
@@ -339,6 +432,9 @@
             </Menu>
             <Menu class="javax.swing.JMenu" name="jMenu14">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/redo-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Redo"/>
               </Properties>
               <SubComponents>
@@ -369,15 +465,41 @@
             <Property name="text" type="java.lang.String" value="Search &amp; Check"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="jMenuItem20">
+            <MenuItem class="javax.swing.JMenuItem" name="searchBar">
               <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+F"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/magnify-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Search..."/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchBarActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="searchLineBar">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="Ctrl+G"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/text-search-custom.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Search line..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="searchLineBarActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator6">
             </MenuItem>
             <Menu class="javax.swing.JMenu" name="jMenu12">
               <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/subcp2/icon/text-box-search-custom.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Spell check"/>
               </Properties>
               <SubComponents>

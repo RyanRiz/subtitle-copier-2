@@ -14,6 +14,8 @@ import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 
+import subcp2.component.Search;
+import subcp2.component.SearchLine;
 import subcp2.service.Copy;
 import subcp2.service.ExportFile;
 import subcp2.utilities.Formatting;
@@ -163,7 +165,8 @@ public class Main extends javax.swing.JFrame {
         jMenuItem27 = new javax.swing.JMenuItem();
         jMenuItem28 = new javax.swing.JMenuItem();
         jMenu11 = new javax.swing.JMenu();
-        jMenuItem20 = new javax.swing.JMenuItem();
+        searchBar = new javax.swing.JMenuItem();
+        searchLineBar = new javax.swing.JMenuItem();
         jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenu12 = new javax.swing.JMenu();
         jMenuItem21 = new javax.swing.JMenuItem();
@@ -823,8 +826,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.setText("File");
 
+        jMenu3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/file-custom.png"))); // NOI18N
         jMenu3.setText("Load subtitle");
 
+        openLeftSubtitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         openLeftSubtitle.setText("Load left subtitle");
         openLeftSubtitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -833,6 +838,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu3.add(openLeftSubtitle);
 
+        openRightSubtitle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         openRightSubtitle.setText("Load right subtitle");
         openRightSubtitle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -844,8 +850,10 @@ public class Main extends javax.swing.JFrame {
         jMenu1.add(jMenu3);
         jMenu1.add(jSeparator1);
 
+        jMenu4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/file-import-custom.png"))); // NOI18N
         jMenu4.setText("Import");
 
+        leftImportText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftImportText.setText("Import text left");
         leftImportText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -854,6 +862,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu4.add(leftImportText);
 
+        rightImportText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightImportText.setText("Import text right");
         rightImportText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -863,6 +872,7 @@ public class Main extends javax.swing.JFrame {
         jMenu4.add(rightImportText);
         jMenu4.add(jSeparator3);
 
+        leftImportTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftImportTime.setText("Import timestamp left");
         leftImportTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -871,6 +881,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu4.add(leftImportTime);
 
+        rightImportTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightImportTime.setText("Import timestamp right");
         rightImportTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -881,8 +892,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.add(jMenu4);
 
+        jMenu5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/file-export-custom.png"))); // NOI18N
         jMenu5.setText("Export");
 
+        leftExportText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftExportText.setText("Export text left");
         leftExportText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -891,6 +904,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu5.add(leftExportText);
 
+        rightExportText.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightExportText.setText("Export text right");
         rightExportText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -900,6 +914,7 @@ public class Main extends javax.swing.JFrame {
         jMenu5.add(rightExportText);
         jMenu5.add(jSeparator5);
 
+        leftExportTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftExportTime.setText("Export timestamp left");
         leftExportTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -908,6 +923,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu5.add(leftExportTime);
 
+        rightExportTime.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightExportTime.setText("Export timestamp right");
         rightExportTime.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -919,8 +935,10 @@ public class Main extends javax.swing.JFrame {
         jMenu1.add(jMenu5);
         jMenu1.add(jSeparator2);
 
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/close-box-custom.png"))); // NOI18N
         jMenu6.setText("Close subtitle");
 
+        leftClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftClose.setText("Close left subtitle");
         leftClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -929,6 +947,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu6.add(leftClose);
 
+        rightClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightClose.setText("Close right subtitle");
         rightClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -939,8 +958,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu1.add(jMenu6);
 
+        jMenu7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/content-save-custom.png"))); // NOI18N
         jMenu7.setText("Save subtitle");
 
+        leftSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         leftSave.setText("Save left subtitle");
         leftSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -949,6 +970,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu7.add(leftSave);
 
+        rightSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         rightSave.setText("Save right subtitle");
         rightSave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -960,6 +982,8 @@ public class Main extends javax.swing.JFrame {
         jMenu1.add(jMenu7);
         jMenu1.add(jSeparator4);
 
+        appExit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        appExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/exit-to-app-custom.png"))); // NOI18N
         appExit.setText("Exit");
         appExit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -972,8 +996,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu2.setText("Edit");
 
+        jMenu8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/text-box-custom.png"))); // NOI18N
         jMenu8.setText("Text");
 
+        copyTextToLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         copyTextToLeft.setText("Copy text to left");
         copyTextToLeft.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -982,6 +1008,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu8.add(copyTextToLeft);
 
+        copyTextToRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         copyTextToRight.setText("Copy text to right");
         copyTextToRight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -992,8 +1019,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu2.add(jMenu8);
 
+        jMenu9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/clock-time-nine-custom.png"))); // NOI18N
         jMenu9.setText("Timestamp");
 
+        copyTimeToLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         copyTimeToLeft.setText("Copy timestamp to left");
         copyTimeToLeft.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1002,6 +1031,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu9.add(copyTimeToLeft);
 
+        copyTimeToRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         copyTimeToRight.setText("Copy timestamp to right");
         copyTimeToRight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1012,8 +1042,10 @@ public class Main extends javax.swing.JFrame {
 
         jMenu2.add(jMenu9);
 
+        jMenu10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/all-inclusive-box-custom.png"))); // NOI18N
         jMenu10.setText("Both");
 
+        copyBothToLeft.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-left-bold-box-custom.png"))); // NOI18N
         copyBothToLeft.setText("Copy both to left");
         copyBothToLeft.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1022,6 +1054,7 @@ public class Main extends javax.swing.JFrame {
         });
         jMenu10.add(copyBothToLeft);
 
+        copyBothToRight.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/arrow-right-bold-box-custom.png"))); // NOI18N
         copyBothToRight.setText("Copy both to right");
         copyBothToRight.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1033,6 +1066,7 @@ public class Main extends javax.swing.JFrame {
         jMenu2.add(jMenu10);
         jMenu2.add(jSeparator7);
 
+        jMenu13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/undo-custom.png"))); // NOI18N
         jMenu13.setText("Undo");
 
         undo.setText("Undo text only");
@@ -1051,6 +1085,7 @@ public class Main extends javax.swing.JFrame {
 
         jMenu2.add(jMenu13);
 
+        jMenu14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/redo-custom.png"))); // NOI18N
         jMenu14.setText("Redo");
 
         redo.setText("Redo text only");
@@ -1073,10 +1108,28 @@ public class Main extends javax.swing.JFrame {
 
         jMenu11.setText("Search & Check");
 
-        jMenuItem20.setText("Search...");
-        jMenu11.add(jMenuItem20);
+        searchBar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        searchBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/magnify-custom.png"))); // NOI18N
+        searchBar.setText("Search...");
+        searchBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBarActionPerformed(evt);
+            }
+        });
+        jMenu11.add(searchBar);
+
+        searchLineBar.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_G, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        searchLineBar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/text-search-custom.png"))); // NOI18N
+        searchLineBar.setText("Search line...");
+        searchLineBar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchLineBarActionPerformed(evt);
+            }
+        });
+        jMenu11.add(searchLineBar);
         jMenu11.add(jSeparator6);
 
+        jMenu12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/subcp2/icon/text-box-search-custom.png"))); // NOI18N
         jMenu12.setText("Spell check");
 
         jMenuItem21.setText("Spell check left");
@@ -1619,6 +1672,16 @@ public class Main extends javax.swing.JFrame {
         copyBothToRightActionPerformed(evt);
     }//GEN-LAST:event_popBothToRightActionPerformed
 
+    private void searchBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBarActionPerformed
+        Search search = new Search(leftTable, rightTable);
+        search.setVisible(true);
+    }//GEN-LAST:event_searchBarActionPerformed
+
+    private void searchLineBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchLineBarActionPerformed
+        SearchLine searchLine = new SearchLine(leftTable, rightTable);
+        searchLine.setVisible(true);
+    }//GEN-LAST:event_searchLineBarActionPerformed
+
     private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
         
     }//GEN-LAST:event_undoActionPerformed
@@ -1681,7 +1744,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem20;
     private javax.swing.JMenuItem jMenuItem21;
     private javax.swing.JMenuItem jMenuItem22;
     private javax.swing.JMenuItem jMenuItem24;
@@ -1754,6 +1816,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTable rightTable;
     private javax.swing.JTextArea rightText;
     private javax.swing.JPanel rightTool;
+    private javax.swing.JMenuItem searchBar;
+    private javax.swing.JMenuItem searchLineBar;
     private javax.swing.JMenuItem undo;
     // End of variables declaration//GEN-END:variables
 }

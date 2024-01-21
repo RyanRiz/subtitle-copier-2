@@ -4,17 +4,88 @@
  */
 package subcp2.component;
 
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import java.awt.Toolkit;
+
+import com.formdev.flatlaf.FlatIntelliJLaf;
+
+import subcp2.utilities.Searching;
+
+
 /**
  *
  * @author Ryan Rizky
  */
 public class Search extends javax.swing.JFrame {
 
+    private JTable left;
+    private JTable right;
+    JTable selectedTable;
+
+    // Create a single instance of Searching
+    Searching searching = new Searching();
     /**
      * Creates new form Search
      */
-    public Search() {
+    public Search(JTable leftTable, JTable rightTable) {
+        this.left = leftTable;
+        this.right = rightTable;
+
         initComponents();
+        centerFrameOnScreen();
+        setAlwaysOnTopUntilDisposed();
+
+        radioNormal.setSelected(true);
+        radioNormal.addActionListener(e -> setOption(radioNormal));
+        radioSensitive.addActionListener(e -> setOption(radioSensitive));
+
+        radioLeft.setSelected(true);
+        radioLeft.addActionListener(e -> chooseTable(radioLeft));
+        radioRight.addActionListener(e -> chooseTable(radioRight));
+    }
+
+    private void setOption(JRadioButton selectedRadio) {
+        if (selectedRadio == radioNormal) {
+            radioSensitive.setSelected(false);
+        } else if (selectedRadio == radioSensitive) {
+            radioNormal.setSelected(false);
+        }
+    }    
+    
+    private void chooseTable(JRadioButton selectedRadio) {
+        if (selectedRadio == radioLeft) {
+            radioRight.setSelected(false);
+        } else if (selectedRadio == radioRight) {
+            radioLeft.setSelected(false);
+        }
+    }
+
+    private void centerFrameOnScreen() {
+        // Calculate the center of the screen
+        int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+        int screenHeight = Toolkit.getDefaultToolkit().getScreenSize().height;
+
+        int frameWidth = getWidth();
+        int frameHeight = getHeight();
+
+        int x = (screenWidth - frameWidth) / 2;
+        int y = (screenHeight - frameHeight) / 2;
+
+        // Set the frame location to the center
+        setLocation(x, y);
+    }
+
+    private void setAlwaysOnTopUntilDisposed() {
+        setAlwaysOnTop(true);
+
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosed(java.awt.event.WindowEvent windowEvent) {
+                setAlwaysOnTop(false);
+            }
+        });
     }
 
     /**
@@ -26,32 +97,94 @@ public class Search extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextField1 = new javax.swing.JTextField();
+        textSearch = new javax.swing.JTextField();
+        radioNormal = new javax.swing.JRadioButton();
+        radioSensitive = new javax.swing.JRadioButton();
+        buttonSearch = new javax.swing.JButton();
+        radioLeft = new javax.swing.JRadioButton();
+        radioRight = new javax.swing.JRadioButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Search");
         setBackground(new java.awt.Color(255, 255, 255));
 
-        jTextField1.setText("jTextField1");
+        radioNormal.setText("Normal");
+
+        radioSensitive.setText("Case Sensitive");
+
+        buttonSearch.setBackground(new java.awt.Color(77, 137, 201));
+        buttonSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        buttonSearch.setForeground(new java.awt.Color(255, 255, 255));
+        buttonSearch.setText("Search");
+        buttonSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonSearchActionPerformed(evt);
+            }
+        });
+
+        radioLeft.setText("Left Table");
+
+        radioRight.setText("Right Table");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radioSensitive)
+                            .addComponent(radioNormal))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(radioLeft)
+                            .addComponent(radioRight))))
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(textSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioNormal)
+                    .addComponent(radioLeft))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(radioSensitive)
+                    .addComponent(radioRight))
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(92, Short.MAX_VALUE))
+                .addComponent(buttonSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonSearchActionPerformed
+        String searchText = textSearch.getText();
+        boolean caseSensitive = radioSensitive.isSelected();
+
+        // Check if searchText only contains string value input
+        if (!searchText.matches("[a-zA-Z]+")) {
+            // Handle invalid input here
+            JOptionPane.showMessageDialog(this, "Error: Invalid input. Please enter a string value for the search text.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        if (radioLeft.isSelected()) {
+            selectedTable = left;
+        } else if (radioRight.isSelected()){
+            selectedTable = right;
+        }
+
+        searching.text(searchText, caseSensitive, selectedTable);
+    }//GEN-LAST:event_buttonSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -62,33 +195,16 @@ public class Search extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Search.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Search().setVisible(true);
-            }
-        });
+        FlatIntelliJLaf.setup(); //</editor-fold>
+        //</editor-fold>;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton buttonSearch;
+    private javax.swing.JRadioButton radioLeft;
+    private javax.swing.JRadioButton radioNormal;
+    private javax.swing.JRadioButton radioRight;
+    private javax.swing.JRadioButton radioSensitive;
+    private javax.swing.JTextField textSearch;
     // End of variables declaration//GEN-END:variables
 }

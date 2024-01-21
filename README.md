@@ -42,11 +42,15 @@ Subtitle Copier is a Java Swing-based application that allows users to manage an
 
 - **Copy Text, Time, Both to Left/Right**: Peforming is now easier with right click shortcut.
 
+### 8. Search Features
+
+- **Search Text**: Search for specific text within the subtitle files.
+- **Search Line**: Search for a specific line number within the subtitle files.
+
 ## Upcoming Features
 
-### 1. Search Feature (Coming Soon 🔍)
-### 2. English Text Detection (Coming Soon 🌐)
-### 3. Undo Manager (Coming Soon ↩️)
+### 1. English Text Detection (Coming Soon 🌐)
+### 2. Undo Manager (Coming Soon ↩️)
 
 ## Usage
 
