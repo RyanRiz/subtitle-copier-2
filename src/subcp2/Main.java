@@ -10,12 +10,15 @@ import java.io.File;
 
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 
 import subcp2.component.Search;
 import subcp2.component.SearchLine;
+import subcp2.custom.ScrollBarWin11UI;
 import subcp2.service.Copy;
 import subcp2.service.ExportFile;
 import subcp2.utilities.Formatting;
@@ -1699,7 +1702,13 @@ public class Main extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        FlatIntelliJLaf.setup(); //</editor-fold>
+        
+        FlatIntelliJLaf.setup(); 
+        
+        UIDefaults ui = UIManager.getDefaults();
+        ui.put("ScrollBarUI", ScrollBarWin11UI.class.getCanonicalName());
+        
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
