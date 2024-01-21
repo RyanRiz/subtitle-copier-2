@@ -10,8 +10,6 @@ import java.io.FileWriter;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
-import com.formdev.flatlaf.ui.FlatListCellBorder.Default;
-
 /**
  *
  * @author Ryan Rizky

@@ -11,7 +11,7 @@ import java.awt.Toolkit;
 
 import com.formdev.flatlaf.FlatIntelliJLaf;
 
-import subcp2.utilities.Searching;
+import subcp2.service.Searching;
 
 
 /**
@@ -107,6 +107,8 @@ public class Search extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Search");
         setBackground(new java.awt.Color(255, 255, 255));
+
+        textSearch.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         radioNormal.setText("Normal");
 

@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTable;
 
-import subcp2.utilities.Searching;
+import subcp2.service.Searching;
 
 /**
  *
@@ -90,6 +90,8 @@ public class SearchLine extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Search Line");
+
+        textSearch.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
 
         buttonSearch.setBackground(new java.awt.Color(77, 137, 201));
         buttonSearch.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
